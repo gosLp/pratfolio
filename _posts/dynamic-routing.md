@@ -1,6 +1,6 @@
 ---
-title: 'Dynamic Routing and Static Generation'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
+title: 'LLM powered Chatbot Built with Rust and Leptos'
+excerpt: 'Discover the future of conversational AI as we delve into the realm of LLM powered chatbots built with the robust combination of Rust and Leptos. Uniting cutting-edge technology with efficient programming, this exploration will unlock the potential of AI-driven conversations, ushering in a new era of interactive and engaging user experiences.'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-03-16T05:35:07.322Z'
 author:
@@ -10,10 +10,11 @@ ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+In the ever-evolving landscape of artificial intelligence and technological innovation, a new frontier has been breached: the creation of a cutting-edge chatbots powered by the formidable combination of Rust, Leptos, Tailwind CSS, and the any Large Language model fine tuned for a custom use case. In this blog post, we'll talk about how i built a chatbot using Rust and Leptos, the process and the challenges i faced. Also share the improvements and any future ideas i have for this project.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+## The Power of LLM: VICUNA 7b
+At the heart of our chatbot's intelligence lies the VICUNA 7b language model. With its capabilities for natural language understanding and generation, VICUNA 7b enables our chatbot to engage in dynamic and meaningful conversations, adapting its responses to context and user intent. This model may not be as extensive as GPT-4 or any large parameter LLM but it is still capable of generating meaningful responses and to establish this particular project and give myself hands on expierence with the integration of LLMs to a serivce.
 
-## Lorem Ipsum
+## Rust and Leptos: A Dynamic Duo
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+Rust, known for its emphasis on performance, memory safety, and concurrency, pairs perfectly with Leptos, a lightweight and high-performance web framework. The synergy between Rust and Leptos empowers our chatbot with lightning-fast response times and robust capabilities, ensuring seamless interactions with users. The integration of these technologies showcases the prowess of modern programming in crafting an efficient and reliable chatbot architecture.
