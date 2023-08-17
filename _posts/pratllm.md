@@ -2,7 +2,7 @@
 title: 'LLM powered Chatbot Built with Rust and Leptos'
 excerpt: 'Discover the future of conversational AI as we delve into the realm of LLM powered chatbots built with the robust combination of Rust and Leptos. Uniting cutting-edge technology with efficient programming, this exploration will unlock the potential of AI-driven conversations, ushering in a new era of interactive and engaging user experiences.'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
-date: '2020-03-16T05:35:07.322Z'
+date: '2023-06-12T05:35:07.322Z'
 author:
   name: Pratheek Shetty
   picture: '/assets/blog/authors/pratfolio1.jpg'
