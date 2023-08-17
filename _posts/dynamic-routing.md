@@ -4,8 +4,8 @@ excerpt: 'Discover the future of conversational AI as we delve into the realm of
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-03-16T05:35:07.322Z'
 author:
-  name: JJ Kasper
-  picture: '/assets/blog/authors/jj.jpeg'
+  name: Pratheek Shetty
+  picture: '/assets/blog/authors/pratfolio1.jpg'
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 ---
@@ -17,4 +17,12 @@ At the heart of our chatbot's intelligence lies the VICUNA 7b language model. Wi
 
 ## Rust and Leptos: A Dynamic Duo
 
-Rust, known for its emphasis on performance, memory safety, and concurrency, pairs perfectly with Leptos, a lightweight and high-performance web framework. The synergy between Rust and Leptos empowers our chatbot with lightning-fast response times and robust capabilities, ensuring seamless interactions with users. The integration of these technologies showcases the prowess of modern programming in crafting an efficient and reliable chatbot architecture.
+Rust, known for its emphasis on performance, memory safety, and concurrency, pairs perfectly with the Rust framework Leptos, a lightweight and high-performance web framework. The synergy between Rust and Leptos empowers the chatbot with fast response times and future scaling being simple. This helped furthering my understanding of FUllStack developement with a fully Rust Stack. Rust has easily become my favourite programming expierence especially with the hekp of its practically non existent runtime errors. 
+
+## Tailwind CSS: Aesthetic Brilliance
+
+I used Tailwind CSS to style the chatbot's frontend. Tailwind CSS is a utility-first CSS framework that allows for rapid styling and customization. With Tailwind CSS, I was able to create a sleek and modern user interface for the chatbot. This was also my first time trully using Tailwind as a CSS framework as all my prior work expierence never dealt with styling of the project.
+
+## The Future Unveiled
+
+The journey of building an LLM-powered chatbot with Rust, Leptos, Tailwind CSS, and the VICUNA 7b model has been a remarkable odyssey into the realms of programming, AI, and design. With each keystroke, line of code, and creative touch, we've harnessed the power of innovation to create a chatbot that exemplifies the pinnacle of modern technology. As we gaze into the future, we're excited to witness the endless possibilities that lie ahead for AI-driven interactions and experiences.
