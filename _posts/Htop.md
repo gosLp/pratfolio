@@ -1,7 +1,7 @@
 ---
 title: 'Rust Powered Htop like WebApp to track Sys performance'
-excerpt: 'a Rust-powered web application that functions as a real-time system performance tracker, similar to the popular htop tool. We'll delve into the source code of the Rust application and understand its components that enable us to monitor various aspects of system performance, including CPU usage and network activity.
-'
+excerpt: "a Rust-powered web application that functions as a real-time system performance tracker, similar to the popular htop tool. Well delve into the source code of the Rust application and understand its components that enable us to monitor various aspects of system performance, including CPU usage and network activity.
+"
 coverImage: '/assets/blog/preview/cover.jpg'
 date: '2023-06-14T05:35:07.322Z'
 author:
