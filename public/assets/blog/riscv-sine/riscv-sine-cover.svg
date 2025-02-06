@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+    <!-- Background -->
+    <rect width="1200" height="630" fill="#0a192f"/>
+    
+    <!-- Circuit board pattern -->
+    <pattern id="circuit" width="50" height="50" patternUnits="userSpaceOnUse">
+        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#172a45" stroke-width="2"/>
+        <circle cx="0" cy="0" r="2" fill="#172a45"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#circuit)"/>
+    
+    <!-- Sine wave -->
+    <path d="M 300 315 
+             C 375 215, 425 415, 500 315
+             C 575 215, 625 415, 700 315
+             C 775 215, 825 415, 900 315" 
+          stroke="#64ffda" stroke-width="4" fill="none"/>
+          
+    <!-- Processor elements -->
+    <rect x="400" y="200" width="400" height="250" fill="none" stroke="#64ffda" stroke-width="3" rx="10"/>
+    <text x="600" y="300" fill="#64ffda" font-family="monospace" font-size="24" text-anchor="middle">RISC-V</text>
+    
+    <!-- RoCC interface visualization -->
+    <path d="M 450 250 L 750 250" stroke="#ff6b6b" stroke-width="3" stroke-dasharray="10,5"/>
+    
+    <!-- Title -->
+    <text x="600" y="520" fill="#ffffff" font-family="Arial" font-size="48" text-anchor="middle" font-weight="bold">
+        Hardware Acceleration of Sine
+    </text>
+    <text x="600" y="570" fill="#8892b0" font-family="Arial" font-size="24" text-anchor="middle">
+        RISC-V Custom Co-processor (RoCC)
+    </text>
+</svg>

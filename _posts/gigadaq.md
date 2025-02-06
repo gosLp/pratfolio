@@ -1,7 +1,7 @@
 ---
 title: "GigaDAQ: Real Time Signal Acquisition and Waveforms"
 excerpt: "A real-time digital oscilloscope application built using React, TypeScript, and Python. This professional-grade tool enables signal visualization, analysis, and data acquisition with features matching industry-standard oscilloscopes."
-coverImage: "/assets/blog/hello-world/cover.jpg"
+coverImage: "/assets/blog/hello-world/gigaDAQ.png"
 date: "2024-11-10T05:35:07.322Z"
 author:
   name: Pratheek Shetty

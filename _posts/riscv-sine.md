@@ -1,7 +1,7 @@
 ---
 title: "Hardware Acceleration of Trigonometric Sine in RISC-V"
 excerpt: "A custom hardware accelerator for the sine function integrated into the RISC-V Rocket core, implementing lookup table and Chebyshev polynomial approximation methods to improve performance of trigonometric calculations."
-coverImage: "/assets/blog/riscv-sine/cover.jpg"
+coverImage: "/assets/blog/riscv-sine/riscv-sine-cover.svg"
 date: "2024-11-10T05:35:07.322Z"
 author:
   name: Pratheek Shetty

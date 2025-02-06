@@ -1,7 +1,7 @@
 ---
 title: "Vision-based Assistive Navigation: Real-time Hazard Detection for the Visually Impaired"
 excerpt: "A computer vision system that combines YOLO object detection, BLIP scene captioning, and generative AI to provide real-time hazard avoidance directions for visually impaired users."
-coverImage: "/assets/blog/cv-nav/cover.jpg"
+coverImage: "/assets/blog/cv-nav/cv-nav-cover.svg"
 date: "2024-11-10T05:35:07.322Z"
 author:
   name: Pratheek Shetty
