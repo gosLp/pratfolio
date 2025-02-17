@@ -1,5 +1,6 @@
+/* markdown-styles.module.css */
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-base text-gray-300 leading-relaxed;
 }
 
 .markdown p,
@@ -9,10 +10,23 @@
   @apply my-6;
 }
 
+/* Use a softer pastel hue for headers */
+.markdown h1 {
+  @apply text-4xl font-bold text-cyan-300 mb-6;
+}
+
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl font-semibold text-cyan-200 mt-10 mb-4;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl font-medium text-cyan-100 mt-8 mb-4;
+}
+
+.markdown a {
+  @apply text-teal-300 underline hover:text-teal-400;
+}
+
+.markdown code {
+  @apply bg-gray-800 text-teal-300 rounded px-1 py-0.5;
 }

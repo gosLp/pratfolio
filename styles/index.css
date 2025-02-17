@@ -1,3 +1,91 @@
+/* 1) Tailwind base & utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 2) Base customizations */
+/* @layer base {
+  :root {
+    --neon-pink: #ff00ff;
+    --neon-blue: #00ffff;
+    --neon-green: #39ff14;
+    --dark-bg: #0a0a0a;
+  } */
+
+/* body {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    font-family: "Courier New", monospace;
+    Slight text glow so it stands out on dark backgrounds
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.1);
+  }
+} */
+
+/* Tron palette + CRT overlay */
+@layer base {
+  :root {
+    --tron-blue: #00f2ff;
+    --tron-green: #39ff14;
+    --tron-pink: #ff00ff;
+    --dark-bg: #0a0a0a;
+  }
+
+  body {
+    background: url("/images/scanlines.png") repeat, var(--dark-bg);
+    background-size: cover;
+    color: #fff;
+    font-family: "Courier New", monospace;
+  }
+}
+
+/* 3) CRT overlay + animations */
+@layer components {
+  .crt::before {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    /* Subtle scanline or flicker overlay here, or just rely on the background image. */
+    background: rgba(0, 0, 0, 0.02);
+    animation: flicker 2s infinite;
+  }
+
+  @keyframes flicker {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.95;
+    }
+  }
+
+  .neon-text {
+    text-shadow: 0 0 2px #fff, 0 0 5px var(--tron-blue);
+  }
+
+  .neon-border {
+    box-shadow: 0 0 2px var(--tron-blue), 0 0 10px var(--tron-blue);
+  }
+
+  /* Tron cycle top-right corner */
+  .tron-cycle-animation {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background: url("/images/mini-tron-cycle.png") no-repeat center/contain;
+    animation: cycle-move 3s infinite alternate;
+  }
+
+  @keyframes cycle-move {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-10px, 10px);
+    }
+  }
+}

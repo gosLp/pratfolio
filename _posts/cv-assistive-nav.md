@@ -8,6 +8,11 @@ author:
   picture: "/assets/blog/authors/pratfolio1.jpg"
 ogImage:
   url: "/assets/blog/cv-nav/teaser.png"
+tags:
+  - home
+  - blog
+  - research
+  - projects
 ---
 
 # Vision-based Assistive Navigation
@@ -37,7 +42,7 @@ Here is the external link to the github pages project page
 - Optimized for mobile devices
 - 72% success rate in hazard detection
 
-![Object detection demo showing identified hazards](/assets/blog/cv-nav/Object-det_example.mp4)
+![Object detection demo showing identified hazards](/assets/blog/cv-nav/Object_det_example.mp4)
 
 ### 2. Scene Understanding
 

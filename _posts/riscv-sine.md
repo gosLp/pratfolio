@@ -8,6 +8,11 @@ author:
   picture: "/assets/blog/authors/pratfolio1.jpg"
 ogImage:
   url: "/assets/blog/riscv-sine/arch.webp"
+tags:
+  - home
+  - blog
+  - research
+  - projects
 ---
 
 # Hardware Acceleration of Trigonometric Sine in RISC-V
