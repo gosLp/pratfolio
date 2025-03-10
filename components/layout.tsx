@@ -48,7 +48,7 @@ export default function Layout({ preview, children }: LayoutProps) {
     { name: "Resume", path: "/resume" },
   ];
   return (
-    <div className="w-screen h-screen flex flex-col crt">
+    <div className="w-full h-screen flex flex-col crt">
       {/* Top 'status bar' / header (optional) */}
       <header className="w-full bg-black/70 border-b border-neon-green text-center p-2 neon-border">
         <h1 className="text-3xl neon-text">Pratfolio</h1>
@@ -86,14 +86,14 @@ export default function Layout({ preview, children }: LayoutProps) {
             <RetroJukebox />
           </div>
         </div> */}
-        <div className="relative h-full w-60 border-r border-neon-green flex flex-col">
+        {/* <div className="relative h-full w-60 border-r border-neon-green flex flex-col">
           <div className="flex-1 overflow-auto">
             <TerminalSidebar />
           </div>
           <div className="mt-auto">
             <RetroJukebox />
           </div>
-        </div>
+        </div> */}
 
         {/* Main content area */}
         <main className="flex-1 overflow-auto p-4">{children}</main>

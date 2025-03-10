@@ -1,4 +1,5 @@
 import Container from "../components/container";
+import Header from "../components/header";
 import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
@@ -11,6 +12,7 @@ export default function Research({ researchPosts }) {
   return (
     <Layout>
       <Container>
+        <Header />
         <Intro />
         {heroPost && (
           <HeroPost
