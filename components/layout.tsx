@@ -50,8 +50,27 @@ export default function Layout({ preview, children }: LayoutProps) {
   return (
     <div className="w-full h-screen flex flex-col crt">
       {/* Top 'status bar' / header (optional) */}
-      <header className="w-full bg-black/70 border-b border-neon-green text-center p-2 neon-border">
+      <header className="w-full bg-black/70 border-b border-neon-green text-center p-4 neon-border">
         <h1 className="text-3xl neon-text">Pratfolio</h1>
+        <nav className="mt-4">
+          <ul className="flex justify-center space-x-6">
+            {sections.map((section) => (
+              <li key={section.name}>
+                {/* <Link href={section.path}>
+                  <a className="text-lg text-cyan-300 hover:text-cyan-500 transition-colors">
+                    {section.name}
+                  </a>
+                </Link> */}
+                <Link
+                  href={section.path}
+                  className=" text-lg text-cyan-300 hover:text-cyan-500 transition-colors hover:underline"
+                >
+                  {section.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </header>
 
       {/* Main container with side nav + main content */}
@@ -104,6 +123,22 @@ export default function Layout({ preview, children }: LayoutProps) {
         <p className="text-sm text-neon-blue">
           &copy; {new Date().getFullYear()} Pratfolio. All rights reserved.
         </p>
+        <div className="mt-2 flex justify-center space-x-4 text-cyan-300">
+          <a
+            href="https://github.com/gosLp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-cyan-500 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="mailto:pratheekps@vt.edu"
+            className="hover:text-cyan-500 transition-colors"
+          >
+            Contact Me
+          </a>
+        </div>
       </footer>
     </div>
   );

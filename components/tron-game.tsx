@@ -57,6 +57,27 @@ export default function TronGame({ sections }: { sections: Section[] }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Canvas click handler to detect clicks on section areas
+  const handleCanvasClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickY = e.clientY - rect.top;
+    // Loop through each section and check if click is within its bounds
+    for (const sec of sections) {
+      if (
+        clickX >= sec.x &&
+        clickX <= sec.x + sec.w &&
+        clickY >= sec.y &&
+        clickY <= sec.y + sec.h
+      ) {
+        router.push(sec.route);
+        break;
+      }
+    }
+  };
+
   useEffect(() => {
     const img = new window.Image();
     img.src = "/assets/lightcycle-8bit.svg";
@@ -190,7 +211,7 @@ export default function TronGame({ sections }: { sections: Section[] }) {
   }, [direction, position, sections, router, trail]);
 
   return (
-    <div className="relative">
+    <div className="relative" onClick={handleCanvasClick}>
       <canvas
         ref={canvasRef}
         width={CANVAS_WIDTH}

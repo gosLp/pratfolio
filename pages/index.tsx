@@ -1,6 +1,7 @@
 import Head from "next/head";
 import TronGame from "../components/tron-game";
 import Layout from "../components/layout";
+import Link from "next/link";
 
 export default function Home() {
   const sections = [
@@ -53,8 +54,10 @@ export default function Home() {
             Welcome to Pratfolio: Use the Light Cycle (&larr; &uarr; &darr;
             &rarr; ) to journey through the zone
           </h1>
-          <TronGame sections={sections} />
-          {/* Optional: additional UI elements can be added here */}
+          <div>
+            <TronGame sections={sections} />
+            {/* Optional: additional UI elements can be added here */}
+          </div>
         </div>
       </Layout>
     </>
