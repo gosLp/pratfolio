@@ -51,17 +51,21 @@ export default function RetroJukebox() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
   const [volume, setVolume] = useState(0.2);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // On mount, set volume and auto-play
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume;
+      audioRef.current.muted = isMuted;
       audioRef.current
         .play()
-        .catch((err) => console.log("AutoPlay error:", err));
-      setIsPlaying(true);
+        .then(() => setIsPlaying(true))
+        .catch((err) => {
+          console.log("AutoPlay error:", err);
+          setIsPlaying(false);
+        });
     }
   }, []);
 
@@ -70,9 +74,10 @@ export default function RetroJukebox() {
       if (isPlaying) {
         audioRef.current.pause();
       } else {
-        audioRef.current.play();
+        audioRef.current
+          .play()
+          .catch((err) => console.error("Play error:", err));
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -82,9 +87,12 @@ export default function RetroJukebox() {
       audioRef.current.load(); // Reset and load the new track
       audioRef.current
         .play()
-        .catch((err) => console.error("AutoPlay error on nextTrack", err));
+        .then(() => setIsPlaying(true))
+        .catch((err) => {
+          console.error("AutoPlay error on nextTrack", err);
+          setIsPlaying(false);
+        });
     }
-    setIsPlaying(true);
   };
 
   const previousTrack = () => {
@@ -198,6 +206,8 @@ export default function RetroJukebox() {
         ref={audioRef}
         src={tracks[currentTrack].url}
         onEnded={nextTrack}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
       />
     </div>
   );
