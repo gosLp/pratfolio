@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Layout from "../components/layout";
 import { getPostBySlug } from "../lib/api";
 import Container from "../components/container";
@@ -16,6 +17,9 @@ type Props = {
 };
 
 export default function Resume({ post, preview }: Props) {
+  const resumeTypes = ["research", "systems", "fullstack"] as const;
+  const [selectedResume, setSelectedResume] = useState<(typeof resumeTypes)[number]>("research");
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -31,6 +35,27 @@ export default function Resume({ post, preview }: Props) {
             date={post.date}
             author={post.author}
           />
+          <div className="mb-8 flex flex-wrap items-center gap-3">
+            {resumeTypes.map((resumeType) => {
+              const isActive = selectedResume === resumeType;
+
+              return (
+                <button
+                  key={resumeType}
+                  type="button"
+                  onClick={() => setSelectedResume(resumeType)}
+                  className={`rounded border px-4 py-2 text-sm font-semibold uppercase tracking-wider transition-colors ${
+                    isActive
+                      ? "border-cyan-400 bg-cyan-400 text-black"
+                      : "border-cyan-700 text-cyan-300 hover:border-cyan-500 hover:text-cyan-200"
+                  }`}
+                >
+                  {resumeType}
+                </button>
+              );
+            })}
+          </div>
+
           <PostBody content={post.content} />
         </article>
       </Container>
