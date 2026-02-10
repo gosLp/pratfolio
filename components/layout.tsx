@@ -1,35 +1,10 @@
-// import Alert from './alert'
-// import Footer from './footer'
-// import Meta from './meta'
-
-// type Props = {
-//   preview?: boolean
-//   children: React.ReactNode
-// }
-
-// const Layout = ({ preview, children }: Props) => {
-//   return (
-//     <>
-//       <Meta />
-//       <div className="min-h-screen">
-//         {/* <Alert preview={preview} /> */}
-//         <main>{children}</main>
-//       </div>
-//       <Footer />
-//     </>
-//   )
-// }
-
-// export default Layout
-
 "use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import TerminalSidebar from "./terminal-sidebar";
-import Footer from "./footer";
+import BottomJukebox from "./bottom-jukebox";
 import Meta from "./meta";
-import RetroJukebox from "./retro-jukebox";
+import { Menu, X } from "lucide-react";
 
 type LayoutProps = {
   preview?: boolean;
@@ -37,8 +12,7 @@ type LayoutProps = {
 };
 
 export default function Layout({ preview, children }: LayoutProps) {
-  const [activeSection, setActiveSection] = useState("home");
-  const router = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const sections = [
     { name: "Home", path: "/" },
@@ -47,83 +21,68 @@ export default function Layout({ preview, children }: LayoutProps) {
     { name: "Research", path: "/research" },
     { name: "Resume", path: "/resume" },
   ];
+
   return (
-    <div className="w-full h-screen flex flex-col crt">
-      {/* Top 'status bar' / header (optional) */}
-      <header className="w-full bg-black/70 border-b border-neon-green text-center p-4 neon-border">
-        <h1 className="text-3xl neon-text">Pratfolio</h1>
-        <nav className="mt-4">
-          <ul className="flex justify-center space-x-6">
-            {sections.map((section) => (
-              <li key={section.name}>
-                {/* <Link href={section.path}>
-                  <a className="text-lg text-cyan-300 hover:text-cyan-500 transition-colors">
+    <div className="w-full min-h-screen flex flex-col crt bg-black">
+      <Meta />
+      <header className="sticky top-0 z-40 w-full bg-black/90 border-b border-neon-green neon-border backdrop-blur">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
+          <h1 className="text-2xl md:text-3xl neon-text">Pratfolio</h1>
+
+          <button
+            type="button"
+            className="rounded p-2 text-cyan-300 md:hidden"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+
+          <nav className="hidden md:block">
+            <ul className="flex justify-center space-x-6">
+              {sections.map((section) => (
+                <li key={section.name}>
+                  <Link
+                    href={section.path}
+                    className="text-lg text-cyan-300 hover:text-cyan-500 transition-colors hover:underline"
+                  >
                     {section.name}
-                  </a>
-                </Link> */}
-                <Link
-                  href={section.path}
-                  className=" text-lg text-cyan-300 hover:text-cyan-500 transition-colors hover:underline"
-                >
-                  {section.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {isMenuOpen && (
+          <div className="border-t border-cyan-900/70 bg-black px-4 py-3 md:hidden">
+            <ul className="space-y-3">
+              {sections.map((section) => (
+                <li key={section.name}>
+                  <Link
+                    href={section.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block rounded border border-cyan-900 px-3 py-2 text-cyan-200 hover:border-cyan-500"
+                  >
+                    {section.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-xs text-cyan-500">
+              Music controls are always available in the bottom player.
+            </p>
+          </div>
+        )}
       </header>
 
-      {/* Main container with side nav + main content */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Side Navigation Panel */}
-        {/* <nav className="w-60 bg-black/70 border-r border-neon-green p-4 overflow-auto">
-          <ul className="space-y-4">
-            {sections.map((section) => (
-              <li key={section.name}>
-                <Link href={section.path}>
-                  <span
-                    onClick={() => setActiveSection(section.name.toLowerCase())}
-                    className={`block px-4 py-2 cursor-pointer transition-colors 
-                      ${
-                        router.pathname === section.path
-                          ? "bg-neon-green text-black"
-                          : "hover:bg-neon-green/20"
-                      }`}
-                  >
-                    {section.name}.exe
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav> */}
-        {/* <div className="w-60 border-r border-neon-green">
-          <div className="flex-1 overflow-auto">
-            <TerminalSidebar />
-          </div>
-          <div className="mt-auto">
-            <RetroJukebox />
-          </div>
-        </div> */}
-        {/* <div className="relative h-full w-60 border-r border-neon-green flex flex-col">
-          <div className="flex-1 overflow-auto">
-            <TerminalSidebar />
-          </div>
-          <div className="mt-auto">
-            <RetroJukebox />
-          </div>
-        </div> */}
+      <main className="flex-1 overflow-auto p-4 pb-16 md:pb-24">{children}</main>
 
-        {/* Main content area */}
-        <main className="flex-1 overflow-auto p-4">{children}</main>
-      </div>
-
-      {/* Footer (optional) */}
-      <footer className="w-full bg-black/70 border-t border-neon-green text-center p-2">
-        <p className="text-sm text-neon-blue">
+      <footer className="w-full bg-black/70 border-t border-neon-green text-center p-2 pb-12 md:pb-16">
+        <p className="text-xs text-neon-blue md:text-sm">
           &copy; {new Date().getFullYear()} Pratfolio. All rights reserved.
         </p>
-        <div className="mt-2 flex justify-center space-x-4 text-cyan-300">
+        <div className="mt-1 flex justify-center space-x-3 text-xs text-cyan-300 md:mt-2 md:space-x-4 md:text-sm">
           <a
             href="https://github.com/gosLp"
             target="_blank"
@@ -140,6 +99,8 @@ export default function Layout({ preview, children }: LayoutProps) {
           </a>
         </div>
       </footer>
+
+      <BottomJukebox />
     </div>
   );
 }
