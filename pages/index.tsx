@@ -1,7 +1,6 @@
 import Head from "next/head";
 import TronGame from "../components/tron-game";
 import Layout from "../components/layout";
-import Link from "next/link";
 
 export default function Home() {
   const sections = [
@@ -50,9 +49,9 @@ export default function Home() {
       </Head>
       <Layout>
         <div className="crt flex flex-col items-center justify-center min-h-full relative">
-          <h1 className="text-3xl neon-text mb-4">
-            Welcome to Pratfolio: Use the Light Cycle (&larr; &uarr; &darr;
-            &rarr; ) to journey through the zone
+          <h1 className="mb-4 text-center text-2xl neon-text md:text-3xl">
+            Welcome to Pratfolio: steer with arrow keys or swipe on mobile to
+            explore the zone.
           </h1>
           <div>
             <TronGame sections={sections} />
